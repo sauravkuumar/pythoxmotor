@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs</title>
+</head>
+<style>
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            height: 100vh;
+            padding: 100px 20px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            transition: background 0.3s ease-in-out;
+        }
+  .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #a4f7b3;
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links li a {
+            color: rgb(0, 0, 0);
+            font-size: 1.1rem;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: #00bcd4;
+            border-radius: 6px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            list-style: none;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .dropdown-content li a {
+            color: #222;
+            padding: 12px 20px;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Nav */
+        .menu-toggle {
+            display: none;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                background: #c1e897;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 70%;
+                display: none;
+                padding: 20px;
+                border-radius: 0 0 0 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: white;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background: #222;
+            }
+
+            .dropdown-content li a {
+                color: white;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+
+            .dropdown.open .dropdown-content {
+                display: block;
+            }
+        }
+</style>
+<body>
+    <!-- navbar1 -->
+    <header>
+      <nav class="navbar">
+          <div class="logo">
+              <img src="https://i.ibb.co/M58dY6LX/logobanner.png" alt="Logo" />
+          </div>
+          <ul class="nav-links" id="navLinks">
+              <li><a href="#home">Home</a></li>
+              <li><a href="/aboutus.html">About</a></li>
+              <li class="dropdown" id="productDropdown">
+                  <a href="javascript:void(0);">Products ▾</a>
+                  <ul class="dropdown-content">
+                      <li><a href="ev.html">E-Vehicles</a></li>
+                      <li><a href="batteries.html">Batteries</a></li>
+                  </ul>
+              </li>
+              <li><a href="#dealer">Dealer & Network</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#career">Career</a></li>
+          </ul>
+      </nav>
+  </header>
+  <section id="about-us1">
+    <div class="container about-us1-container">
+
+      <!-- Company Profile -->
+      <div class="section company-profile">
+        <h2>Company <span>Profile</span></h2>
+        <p><strong>Pythox Motor</strong> is a leading name in electric and performance motor innovation.
+          Since our inception, we have focused on engineering smart, sustainable, and robust mobility solutions that cater to future-forward users.
+          With a dedicated R&D team, cutting-edge facilities, and a passion for transforming motion,
+          Pythox Motor continues to push boundaries in the automotive industry.
+        </p>
+      </div>
+
+      <!-- Vision and Mission -->
+      <div class="section vision-mission">
+        <h2>Our <span>Vision & Mission</span></h2>
+        <div class="vm-content">
+          <div class="vision">
+            <h3>Vision</h3>
+            <p>To be the most trusted name in sustainable and innovative motor technology worldwide.</p>
+          </div>
+          <div class="mission">
+            <h3>Mission</h3>
+            <p>Deliver smart, reliable, and eco-friendly mobility products while exceeding expectations in performance, safety, and design.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awards and Certificates -->
+      <div class="section awards">
+        <h2>Awards & <span>Certificates</span></h2>
+        <div class="awards-gallery">
+          <img src="/img/award1.jpg" alt="Award 1">
+          <img src="/img/certificate1.jpg" alt="Certificate 1">
+          <img src="/img/award2.jpg" alt="Award 2">
+          <img src="/img/certificate2.jpg" alt="Certificate 2">
+        </div>
+      </div>
+
+      <!-- Company Team Image -->
+      <div class="section company-image">
+        <img src="/img/company_team.jpg" alt="Pythox Motor Team" />
+      </div>
+
+    </div>
+  </section>
+
+  <script src="./app.js"></script>
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <h2><span>Pythox</span> Moto</h2>
+        <p>Your Ultimate Motor Innovation Partner</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/pythoxmotors/"><img src="https://cdn-icons-png.freepik.com/256/15707/15707884.png?semt=ais_hybrid" alt="Facebook"></a>
+            <a href="https://www.instagram.com/pythox_motors/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
+            <a href="https://x.com/pythox_motors"><img src="data:image/png;base64,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" alt="Linkdin"></a>
+            <a href="https://www.linkedin.com/in/alok-ranjan-24901644/?originalSubdomain=in"><img src="https://yt3.googleusercontent.com/i6KNxiy3gME-BulL4WnuGkTGqHuSYF8jl1WRn0rXftcJdSYK7dHKcJ3gLAaPc-KfhmLSYPwf824=s900-c-k-c0x00ffffff-no-rj" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pythox Moto. All rights reserved.</p>
+    </div>
+  </div>
+  <style>
+    
+#footer {
+color: #000000;
+padding: 40px 20px;
+font-family: Arial, sans-serif;
+}
+.footer-container {
+background: #a4f7b3;
+}
+
+.footer-top {
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+
+.footer-logo h2 {
+font-size: 24px;
+margin-bottom: 5px;
+color: #ff4d4d;
+}
+
+.footer-logo span {
+color: #000000;
+margin-left: 2rem;
+}
+
+.footer-logo p {
+font-size: 14px;
+color: #000000;
+margin-left: 2rem;
+}
+
+.footer-links {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.footer-links div h4 {
+margin-left: 1rem;
+font-size: 16px;
+color: #000000;
+}
+
+.footer-links ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.footer-links ul li {
+margin: 6px 0;
+}
+
+.footer-links ul li a {
+color: #000000;
+text-decoration: none;
+font-size: 14px;
+margin-left: 1rem;
+}
+
+.footer-links ul li a:hover {
+text-decoration: underline;
+}
+
+.social-icons a img {
+width: 30px;
+margin-left: 1rem;
+}
+
+.footer-bottom {
+text-align: center;
+margin-top: 30px;
+font-size: 13px;
+color: #000000;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+.footer-top {
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+}
+.footer{
+background: #a4f7b3;
+}
+
+.footer-links {
+flex-direction: row;
+gap: 40px;
+}
+
+.footer-links div {
+flex: 1;
+}
+
+.footer-logo {
+flex: 1;
+}
+}
+
+/* End Footer */
+
+/* Keyframes */
+@keyframes hamburger_puls {
+0% {
+opacity: 1;
+transform: scale(1);
+}
+100% {
+opacity: 0;
+transform: scale(1.4);
+}
+}
+@keyframes text_reveal_box {
+50% {
+width: 100%;
+left: 0;
+}
+100% {
+width: 0;
+left: 100%;
+}
+}
+@keyframes text_reveal {
+100% {
+color: white;
+}
+}
+@keyframes text_reveal_name {
+100% {
+color: crimson;
+font-weight: 500;
+}
+}
+  </style>
+
+<!-- JS -->
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const dropdown = document.getElementById('productDropdown');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Mobile dropdown toggle on click
+    dropdown.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+            this.classList.toggle('open');
+        }
+    });
+
+    // Close dropdown when clicked outside (mobile)
+    window.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target) && window.innerWidth <= 768) {
+            dropdown.classList.remove('open');
+        }
+    });
+
+</script>
+
+</body>
+<style>
+  #about-us1 {
+      padding: 100px 20px 60px;
+    }
+
+    .about-us1-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #1c1c1c;
+      border-bottom: 3px solid #ff4d4d;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .section h2 span {
+      color: #ff4d4d;
+    }
+
+    .section p {
+      font-size: 17px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .vm-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .vm-content .vision,
+    .vm-content .mission {
+      background: #ffffff;
+      padding: 25px;
+      border-left: 5px solid #ff4d4d;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+
+    .vm-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #1c1c1c;
+    }
+
+    .awards-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .awards-gallery img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .awards-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .company-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      margin-top: 30px;
+    }
+
+    /* Responsive Enhancements */
+    @media (min-width: 768px) {
+      .vm-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .vm-content .vision,
+      .vm-content .mission {
+        width: 48%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section h2 {
+        font-size: 26px;
+      }
+
+      .vm-content .vision,
+      .vm-content .mission {
+        padding: 20px;
+      }
+
+      .section p {
+        font-size: 15px;
+      }
+    }
+
+    /* Simple Animation */
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+</style>
+</html>
