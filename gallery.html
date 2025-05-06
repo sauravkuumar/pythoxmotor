@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+
+    .gallery-section {
+        margin-top: 10rem;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .gallery-title {
+      font-size: 5rem;
+      margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox styling */
+    #lightbox {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <!-- navbar1 -->
+  <section id="navbar1">
+    <div class="navbar1 container">
+      <div class="nav-bar">
+        <div class="brand">
+          <!----https://i.ibb.co/M58dY6LX/logobanner.png---->
+          <img src="https://i.ibb.co/M58dY6LX/logobanner.png">
+
+          <!---<a href="#hero">
+          - <img src="https://i.ibb.co/M58dY6LX/logobanner.png">
+            -<h1><span>PYTHOX</span>motor<span></h1>---------->
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="/index.html" data-after="Home">Home</a></li>
+
+            <li><a href="#about" data-after="About">About</a></li>
+
+            <li><a href="/aboutus.html" data-after="About">Products</a></li>
+
+            <li><a href="#gallery" data-after="About">Gallery</a></li>
+
+            <li><a href="#contact" daPta-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End navbar1 -->
+  <section class="gallery-section">
+    <h1 class="gallery-title">Gallery</h1>
+    <div class="gallery-grid">
+      <img src="https://5.imimg.com/data5/SELLER/Default/2024/6/428339363/XM/II/UO/73909991/pythox-motors-private-limited.jpeg" alt="Gallery Image 1" onclick="openLightbox(this.src)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDNOpcwDovazs2ojFsB6C-5FaT3xkUP5wkTj_f_SOLBpRlqmfmpyfIWOS0TgNrg4wKmOY&usqp=CAU" alt="Gallery Image 2" onclick="openLightbox(this.src)">
+      <img src="https://5.imimg.com/data5/ANDROID/Default/2022/12/MO/PH/HL/39355309/product-jpeg-500x500.jpg" alt="Gallery Image 3" onclick="openLightbox(this.src)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk3ePnjj8KLrfo_tdixrTA1XEZfnN2G11IkjRPVUh6g20mWI9CpHNgjcriOlgkpqte720&usqp=CAU" alt="Gallery Image 4" onclick="openLightbox(this.src)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdOhpbcd8QGgL0j46WBM1ac4t6wBLOYJ8URvrnO3ktP0FkeoDw67M7iVNldz9_yE3_NyQ&usqp=CAU" alt="Gallery Image 5" onclick="openLightbox(this.src)">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBi-JDnec1_WKgz3Orfx70Ve_lpb4-9u0CTR96M3U6PD1l4C8mwYMikAtpgX-yndoxuMM&usqp=CAU" alt="Gallery Image 6" onclick="openLightbox(this.src)">
+    </div>
+  </section>
+
+  <!-- Lightbox HTML -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Full View">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+ <script src="./app.js"></script>
+</body>
+</html>
+
+
+
